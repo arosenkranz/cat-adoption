@@ -41,10 +41,10 @@ const updateCat = (catObj, catId) => {
         console.log(err);
         return reject(err);
       } else if (catdata.affectedRows === 0) {
-        return resolve({ message: "Couldn't find a cat with that id!" });
+        return resolve({ message: "Couldn't find a cat with that id!", code: 404 });
       }
 
-      resolve({ message: 'Cat updated successfully!' });
+      resolve({ message: 'Cat updated successfully!', code: 200 });
     });
   });
 };
@@ -57,10 +57,10 @@ const deleteCat = catId => {
         console.log(err);
         return reject(err);
       } else if (catdata.affectedRows === 0) {
-        return resolve({ message: "Couldn't find a cat with that id!" });
+        return resolve({ message: "Couldn't find a cat with that id!", code: 404 });
       }
 
-      resolve({ message: 'Cat deleted successfully!' });
+      resolve({ message: 'Cat deleted successfully!', code: 200 });
     });
   });
 };
