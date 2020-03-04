@@ -3,10 +3,12 @@ const mysql = require('mysql');
 // load environment variables
 require('dotenv').config();
 
-if (process.env.JAWSDB_URL) {
+if (process.env.COOLNAME) {
   console.log("We're in production");
+  console.log(process.env.COOLNAME);
 } else {
   console.log("We're in development");
+  console.log(process.env.COOLNAME);
 }
 
 // create connection to db
